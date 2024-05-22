@@ -4,26 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ImaginarIA</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-    <header>
-        <h1>ImaginarIA</h1>
-        <button>
-            <img src="" alt="img_pdf">
-            <p>Descargar PDF</p>
-        </button>
+    <header class="cabecera">
+        <h1 class="titulo">ImaginarIA</h1>
+        <div class="botones">
+            <button class="boton_nuevo">
+                <img class="img_nuevo" src="assets/images/logo_nuevo.png" alt="imagen-nuevo">
+                <p class="texto_nuevo">Nueva historia</p>
+            </button>
+            <button class="boton_pdf">
+                <img class="img_pdf" src="assets/images/logo.png" alt="imagen-pdf">
+                <p class="texto_pdf">Descargar PDF</p>
+            </button>
+        </div>
+        
     </header>
     <main>
-        <div>
-            <label for="inputTexto">Ingrese el tema de la historia:</label>
-            <div>
-                <input type="text" id="inputTexto" placeholder="Escriba aquí">
-                <button>
-                    <img src="" alt="Enviar mensaje">
-                </button>
-            </div>
-            
+        <div class="contenedor_inicio">
+            <label class="mensaje_inicio" for="inputTexto">¡Bienvenido a ImaginarIA! Para empezar a desarrollar tu historia, dános algún detalle que quieres que incluya.
+            </label>
+        </div>
+        <div class="contenedor_input">
+            <input class="mensaje_input" type="text" id="inputTexto" placeholder="Escriba aquí">
+            <button class="boton_input">
+                <img class="img_input" src="assets/images/logo_enviar.png" alt="Enviar mensaje">
+            </button>
+        </div>       
         
     </main>
 </body>
