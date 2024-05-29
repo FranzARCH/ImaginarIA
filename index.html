@@ -19,20 +19,55 @@
                 <p class="texto_pdf">Descargar PDF</p>
             </button>
         </div>
-        
     </header>
+
     <main>
         <div class="contenedor_inicio">
-            <label class="mensaje_inicio" for="inputTexto">¡Bienvenido a ImaginarIA! Para empezar a desarrollar tu historia, dános algún detalle que quieres que incluya.
+            <label class="mensaje_inicio" for="inputTexto" id="bienvenida">¡Bienvenido a ImaginarIA! Para empezar a desarrollar tu historia, dános algún detalle que quieres que incluya.
             </label>
+            <div class="contenido_ingresado" id="contenido_ingresado"></div>
         </div>
         <div class="contenedor_input">
             <input class="mensaje_input" type="text" id="inputTexto" placeholder="Escriba aquí">
-            <button class="boton_input">
+            <button class="boton_input" onclick="mostrarTexto()">
                 <img class="img_input" src="assets/images/logo_enviar.png" alt="Enviar mensaje">
             </button>
-        </div>       
-        
+        </div>
     </main>
+    <script>
+        const respuestasAleatorias = [
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum doloribus deserunt beatae quod aperiam voluptatibus minima explicabo sint eos labore alias exercitationem sed quo ad neque non excepturi enim, ullam placeat. Consequuntur architecto eligendi molestiae quam officiis, fugit distinctio labore magnam fugiat autem odio ut repudiandae. Voluptates atque quibusdam non. Perspiciatis quod facilis illo dicta voluptas doloremque vitae, blanditiis quibusdam, dolorum aliquam tempora id necessitatibus quia porro. Modi nemo a, provident unde eveniet odio tempore eos suscipit tenetur. Autem vero, rerum animi omnis natus odio magnam cumque placeat corporis necessitatibus ut blanditiis illum! Alias, ex! Nam libero cum labore.",
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora ratione amet odio. Quaerat nemo quas sint? Magni assumenda architecto ipsa aspernatur aut, quaerat magnam repellendus deserunt ipsam in, dolorem veniam doloribus sequi suscipit optio modi labore soluta aperiam exercitationem, quam voluptates totam officia! Minus quis excepturi dolorum, sapiente labore veritatis velit, expedita in officiis pariatur ex. Molestias eius minus sequi ipsa necessitatibus vitae, accusantium incidunt doloribus explicabo numquam natus, iure dolor temporibus neque quaerat qui, similique consequuntur nam dicta quidem!",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae minus deleniti quaerat placeat ullam eius nesciunt quasi numquam officia adipisci voluptatum pariatur eligendi quod temporibus sapiente rerum ut, ipsum eum esse magni praesentium enim? Temporibus aperiam rerum pariatur, quisquam tempore ipsa incidunt non recusandae nisi iure dignissimos quos corrupti hic repellat voluptatum amet at dolor impedit fuga reiciendis autem, eum minus! Et mollitia perferendis quis eaque provident inventore impedit? Eos dolorem distinctio debitis similique eligendi.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quae delectus a! Officia totam, cumque nobis vero sit odit aspernatur? Autem vel suscipit aliquid, nulla voluptate consequuntur quidem eius similique, impedit dolorum rem officia ducimus sapiente facilis rerum vitae repellendus illum ratione fugit eos dolorem minus quasi. Placeat, deserunt maiores?",
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla corporis harum tenetur, molestias maiores repudiandae autem, laborum tempora quibusdam quia ducimus, ullam praesentium quo facilis ad doloribus. Provident, voluptates. Eius?"
+        ];
+
+        function mostrarTexto() {
+            const texto = document.getElementById('inputTexto').value;
+            if (texto.trim() !== "") {
+                agregarMensaje(texto, 'derecha');
+                document.getElementById('inputTexto').value = "";
+
+                setTimeout(() => {
+                    const respuesta = respuestasAleatorias[Math.floor(Math.random() * respuestasAleatorias.length)];
+                    agregarMensaje(respuesta, 'izquierda');
+                }, 1000);
+            }
+        }
+
+        function agregarMensaje(texto, alineacion) {
+            const nuevoMensaje = document.createElement('p');
+            nuevoMensaje.className = `texto_ingresado ${alineacion}`;
+            nuevoMensaje.innerText = texto;
+
+            const contenedor = document.getElementById('contenido_ingresado');
+            contenedor.appendChild(nuevoMensaje);
+
+            document.getElementById('bienvenida').style.display = "none";
+            contenedor.scrollTop = contenedor.scrollHeight;
+        }
+    </script>
 </body>
 </html>
+
