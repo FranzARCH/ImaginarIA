@@ -1,33 +1,30 @@
-html, body{
+html, body {
     height: 100%;
     padding: 0px;
     margin: 0px;
-    background-color: #E3E5D7;   
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    background-color: #E3E5D7;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
 
 header.cabecera {
     padding-left: 45px;
     padding-right: 20px;
     height: 150px;
     width: 100%;
-    background-color: 
-    #586875;
+    background-color: #586875;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
 
-h1.titulo{
+h1.titulo {
     display: flex;
     align-items: center;
     font-size: 50px;
     color: #E3E5D7;
 }
 
-div.botones{
+div.botones {
     display: flex;
     justify-content: space-around;
     width: 550px;
@@ -35,10 +32,9 @@ div.botones{
     margin-right: 55px;
     align-items: center;
     flex-direction: row;
-
 }
 
-button.boton_nuevo{
+button.boton_nuevo, button.boton_pdf {
     height: 100%;
     width: 230px;
     display: flex;
@@ -48,57 +44,33 @@ button.boton_nuevo{
     border: none;
 }
 
-img.img_nuevo{
+img.img_nuevo, img.img_pdf {
     padding: 0 8px;
     height: 60%;
     width: 43px;
     display: flex;
     align-items: center;
     filter: invert(100%);
-
 }
 
-p.texto_nuevo{
+p.texto_nuevo, p.texto_pdf {
     padding-left: 12px;
     font-size: 20px;
     color: #E3E5D7;
 }
 
-button.boton_pdf{
-    width: 230px;
-    height: 100%;
-    display: flex;
-    border-radius: 20px;
-    align-items: center;
-    background-color: #586875;
-    border: none;
-}
-
-img.img_pdf{
-    padding: 0 8px;
-    height: 60%;
-    display: flex;
-    align-items: center;
-    filter: invert(100%);
-}
-
-p.texto_pdf{
-    padding-left: 8px;
-    font-size: 20px;
-    color: #E3E5D7;
-}
-
-button.boton_nuevo:hover, button.boton_pdf:hover{
-    background-color:#6C788E;
+button.boton_nuevo:hover, button.boton_pdf:hover {
+    background-color: #6C788E;
     cursor: pointer;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    max-height: 100vh;
 }
 
-main{
+main {
     padding-top: 30px;
     flex: 1;
     display: flex;
@@ -107,28 +79,59 @@ main{
     flex-direction: column;
 }
 
-div.contenedor_inicio{
+div.contenedor_inicio {
     display: flex;
+    flex-direction: column;
     width: 70%;
     height: 70%;
+    overflow-y: auto;
+    padding-right: 20px;
 }
 
-.mensaje_inicio{
+.mensaje_inicio {
     font-size: 20px;
 }
 
-div.contenedor_input{
+.contenido_ingresado {
+
+    max-height: 70vh; /* Altura máxima de la sección de la historia */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.texto_ingresado {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    max-width: 70%;
+    box-sizing: border-box;
+    text-align: left    ;
+    word-wrap: break-word;
+    margin-top: 10px;
+}
+
+.texto_ingresado.izquierda {
+    background-color: #F0E68C;
+    align-self: flex-start;
+}
+
+.texto_ingresado.derecha {
+    background-color: #BDD6D2;
+    align-self: flex-end;
+}
+
+div.contenedor_input {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     border-radius: 100px;
     border: black solid 1.5px;
-
     width: 50%;
     height: 75px;
 }
 
-.mensaje_input{
+.mensaje_input {
     padding-left: 28px;
     padding-right: 28px;
     border: transparent;
@@ -140,7 +143,7 @@ div.contenedor_input{
     font-size: 20px;
 }
 
-.boton_input{
+.boton_input {
     height: 70%;
     width: 51px;
     border: none;
@@ -150,8 +153,7 @@ div.contenedor_input{
     background-color: #E3E5D7;
 }
 
-
-.img_input{
+.img_input {
     height: 100%;
     border-radius: 100px;
     background-color: #E3E5D7;
